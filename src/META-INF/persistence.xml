@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="3.1.0">
+	<persistence-unit name="gestorF1"
+	                  transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<class>entidades.Piloto</class>
+		<properties>
+			<property name="eclipselink.ddl-generation"
+			          value="create-tables"/>
+			<property name="jakarta.persistence.cj.jdbc.driver"
+			          value="com.mysql.jdbc.Driver"/>
+			<property name="jakarta.persistence.jdbc.url"
+			          value="jdbc:mysql://localhost:3306/pilotosF1"/>
+			<property name="jakarta.persistence.jdbc.user"
+			          value="root"/>
+			<property name="jakarta.persistence.jdbc.password"
+			          value="123456"/>
+		</properties>
+	</persistence-unit>
+</persistence>
