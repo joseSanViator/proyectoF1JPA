@@ -27,7 +27,7 @@ public class Principal {
 		//...
 		//Quiero persistir (guardar en la BD) un objeto de tipo Piloto.
 		//Para ello, usaré el método persist(Object o) de la clase EntityManager:
-		//manager.persist(p4);
+		manager.persist(p4);
 		
 		//...
 		//Una vez he ralizado todas las acciones que quiero hacer en la transacción, ejecuto esta transacción
@@ -54,13 +54,14 @@ public class Principal {
 			pilotoActualizar.setPuntosClasificacion(85);
 			tran.commit();
 		}
+		
 		//Vamos a buscar a Esteban Occon por ID y vamos a borrarlo de la BD
 		Piloto pilotoBorrar=manager.find(Piloto.class, 31);
 		if(pilotoBorrar!=null) {
 			EntityTransaction tran=manager.getTransaction();
 			tran.begin();
 			//Al método remove() le paso como parámetro de entrada el objeto Piloto que queremos borrar , en este caso el de Esteban Occon
-			manager.remove(pilotoBorrar);
+			//manager.remove(pilotoBorrar);
 			tran.commit();
 		}
 		
